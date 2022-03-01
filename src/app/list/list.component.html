@@ -1,0 +1,48 @@
+<div class="row mt-5">
+    <h1>Hight power</h1>
+   
+   <ng-container *ngFor="let h of heros">
+        <div *ngIf="h.power > 50" [ngClass]="{ 'col-3':true , 'card': true , 'bg-red': h.power < 30 , 'bg-brown': h.power > 30 && h.power < 60 , 'bg-yellow': h.power > 60 }" >
+
+            
+                <div class="card-header">
+                    <img [src]="h.image" alt="" style="width: 100%;height: 200px;" >
+                </div>
+                <div class="card-body">
+
+                    <h2> {{h.name}} </h2>
+                    <p> {{h.power}} </p>
+                </div>
+
+    
+        </div>
+   </ng-container>
+
+
+
+</div>
+
+
+<div class="row mt-5">
+    <h1>Low power</h1>
+   
+   <ng-container *ngFor="let h of heros">
+        <div *ngIf="h.power < 50" [ngClass]="{ 'col-3':true , 'card': true , 'bg-red': h.power < 30 , 'bg-brown': h.power > 30 && h.power < 60 , 'bg-yellow': h.power > 60 }" >
+
+            
+                <div class="card-header">
+                    <img [src]="h.image" alt="" style="width: 100%;height: 200px;" >
+                </div>
+                <div class="card-body">
+
+                    <h2> {{h.name}} </h2>
+                    <p> {{h.power}} </p>
+                </div>
+
+    
+        </div>
+   </ng-container>
+
+
+
+</div>
