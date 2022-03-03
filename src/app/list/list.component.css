@@ -1,6 +1,6 @@
 .bg-red{
 
-    background-color: red;
+    background-color: rgb(255, 109, 109);
 
 }
 
@@ -9,5 +9,5 @@
 }
 
 .bg-yellow{
-    background-color: yellow;
+    background-color: rgb(16, 240, 173);
 }

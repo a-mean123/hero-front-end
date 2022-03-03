@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SharedService } from '../shared.service';
 
 @Component({
@@ -8,22 +9,35 @@ import { SharedService } from '../shared.service';
 })
 export class AjoutComponent implements OnInit {
 
+  myFile : any;
+
   hero = {
     name:'',
     power:0,
     image:''
   }
 
+
+  select(e: any){
+
+      this.myFile = e.target.files[0];
+
+      
+  }
+
+
+
   ajout(){
-    this._shared.create(this.hero).subscribe(
+
+    let fd = new FormData();
+    fd.append('name' , this.hero.name);
+    fd.append('power' , this.hero.power.toString());
+    fd.append('image' , this.myFile);
+
+    this._shared.create(fd).subscribe(
 
       (res)=>{
-        console.log(res);
-        this.hero = {
-          name:'',
-          power:0,
-          image:''
-        }
+        this.router.navigate([ '/' ]);
       },
       (err)=>{
         console.log(err);
@@ -34,7 +48,7 @@ export class AjoutComponent implements OnInit {
 
   }
   
-  constructor( private _shared : SharedService ) { }
+  constructor( private _shared : SharedService , private router: Router) { }
 
   ngOnInit(): void {
   }

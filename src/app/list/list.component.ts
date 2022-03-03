@@ -28,5 +28,18 @@ export class ListComponent implements OnInit {
   }
 
 
+  delete(id: any){
+      this._shared.deleteHero(id).subscribe(
+        response=>{
+          this.ngOnInit();
+        },
+        err=>{
+          console.log(err);
+          
+        }
+      ); 
+  }
+
+
 
 }

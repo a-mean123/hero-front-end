@@ -6,12 +6,16 @@
 
             
                 <div class="card-header">
-                    <img [src]="h.image" alt="" style="width: 100%;height: 200px;" >
+                    <img [src]="'http://127.0.0.1:3000/getimage/' +  h.image " alt="" style="width: 100%;height: 200px;" >
                 </div>
                 <div class="card-body">
 
                     <h2> {{h.name}} </h2>
                     <p> {{h.power}} </p>
+
+                    <button class="btn btn-danger" (click)="delete(h._id)" >Delete</button>
+                    <button class="btn btn-success ml-2" [routerLink]="[ '/update' , h._id ]" >Update</button>
+
                 </div>
 
     
@@ -31,12 +35,16 @@
 
             
                 <div class="card-header">
-                    <img [src]="h.image" alt="" style="width: 100%;height: 200px;" >
+                    <img [src]=" 'http://127.0.0.1:3000/getimage/' +  h.image " alt="" style="width: 100%;height: 200px;" >
                 </div>
                 <div class="card-body">
 
                     <h2> {{h.name}} </h2>
                     <p> {{h.power}} </p>
+
+                    <button class="btn btn-danger" (click)="delete(h._id)" >Delete</button>
+
+                    <button class="btn btn-success ml-2" [routerLink]="[ '/update' , h._id ]" >Update</button>
                 </div>
 
     

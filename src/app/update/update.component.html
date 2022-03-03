@@ -9,12 +9,12 @@
 
         </div>
         <div class="col-3">
-            <input type="file"  (change)=" select($event) "  class="form-control m-2" placeholder="image url">
+            <input type="text" [(ngModel)]="hero.image"  class="form-control m-2" placeholder="image url">
 
         </div>
         <div class="col-3">
 
-            <button class="btn btn-danger m-2 form-control" (click)="ajout()">Create</button>
+            <button class="btn btn-danger m-2 form-control" (click)="update()">Save</button>
 
         </div>
 
